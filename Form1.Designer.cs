@@ -59,6 +59,7 @@
             input_window.Name = "input_window";
             input_window.Size = new Size(439, 27);
             input_window.TabIndex = 2;
+            input_window.KeyDown += input_window_KeyDown;
             // 
             // Btn_Forwarding
             // 
