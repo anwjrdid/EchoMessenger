@@ -9,7 +9,7 @@ namespace EchoMessenger
 
         private void Btn_Forwarding_Click(object sender, EventArgs e)
         {
-            string raw_msg = input_window.Text.Trim();
+            string raw_msg = input_window.Text.Trim(); // 앞뒤 공백 제거 (Trim)
 
             //입력 방어 (공백 제외하고 내용이 있는지 확인)
             if (string.IsNullOrWhiteSpace(raw_msg))
@@ -23,6 +23,13 @@ namespace EchoMessenger
             
             // 현재 시간 구하기 (yyyy-MM-dd HH:mm:ss 형식)
             string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            // 시간과 메시지 결합해서 리스트박스에 추가
+            string final_msg = $"[{time}] {raw_msg}";
+            output_window.Items.Add(final_msg);
+
+            // 메시지 개수 업데이트 
+            lbl_Count.Text = $"현재 대화: {output_window.Items.Count}개";
 
 
             //마무리(비우고 포커스)
