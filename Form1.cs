@@ -9,9 +9,10 @@ namespace EchoMessenger
 
         private void Btn_Forwarding_Click(object sender, EventArgs e)
         {
-            string raw_msg = input_window.Text.Trim(); // 앞뒤 공백 제거 (Trim)
+            // 앞뒤 공백 제거 (Trim)
+            string raw_msg = input_window.Text.Trim();
 
-            //입력 방어 (공백 제외하고 내용이 있는지 확인)
+            // 입력 방어 (공백 제외하고 내용이 있는지 확인)
             if (string.IsNullOrWhiteSpace(raw_msg))
             {
                 return;
@@ -19,8 +20,6 @@ namespace EchoMessenger
 
             string typed_msg = input_window.Text; // 입력창에 입력된 텍스트를 가져와서 typed_msg 변수에 저장
 
-            output_window.Items.Add(typed_msg); // output_window 리스트박스에 typed_msg를 추가하여 출력창에 메시지를 표시
-            
             // 현재 시간 구하기 (yyyy-MM-dd HH:mm:ss 형식)
             string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -31,8 +30,7 @@ namespace EchoMessenger
             // 메시지 개수 업데이트 
             lbl_Count.Text = $"현재 대화: {output_window.Items.Count}개";
 
-
-            //마무리(비우고 포커스)
+            // 마무리 (비우고 포커스)
             input_window.Clear();
             input_window.Focus();
         }
