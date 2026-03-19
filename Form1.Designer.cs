@@ -32,6 +32,7 @@
             output_window = new ListBox();
             input_window = new TextBox();
             Btn_Forwarding = new Button();
+            lbl_Count = new Label();
             SuspendLayout();
             // 
             // label1
@@ -73,11 +74,20 @@
             Btn_Forwarding.UseVisualStyleBackColor = false;
             Btn_Forwarding.Click += Btn_Forwarding_Click;
             // 
+            // lbl_Count
+            // 
+            lbl_Count.AutoSize = true;
+            lbl_Count.Location = new Point(325, 30);
+            lbl_Count.Name = "lbl_Count";
+            lbl_Count.Size = new Size(0, 20);
+            lbl_Count.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(591, 409);
+            Controls.Add(lbl_Count);
             Controls.Add(Btn_Forwarding);
             Controls.Add(input_window);
             Controls.Add(output_window);
@@ -94,5 +104,6 @@
         private ListBox output_window;
         private TextBox input_window;
         private Button Btn_Forwarding;
+        private Label lbl_Count;
     }
 }
