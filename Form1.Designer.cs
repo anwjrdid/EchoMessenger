@@ -33,6 +33,8 @@
             input_window = new TextBox();
             Btn_Forwarding = new Button();
             lbl_Count = new Label();
+            Btn_Delete = new Button();
+            Btn_ClearAll = new Button();
             SuspendLayout();
             // 
             // label1
@@ -82,11 +84,33 @@
             lbl_Count.Size = new Size(0, 20);
             lbl_Count.TabIndex = 4;
             // 
+            // Btn_Delete
+            // 
+            Btn_Delete.Location = new Point(357, 25);
+            Btn_Delete.Name = "Btn_Delete";
+            Btn_Delete.Size = new Size(94, 29);
+            Btn_Delete.TabIndex = 5;
+            Btn_Delete.Text = "삭제";
+            Btn_Delete.UseVisualStyleBackColor = true;
+            Btn_Delete.Click += Btn_Delete_Click;
+            // 
+            // Btn_ClearAll
+            // 
+            Btn_ClearAll.Location = new Point(464, 25);
+            Btn_ClearAll.Name = "Btn_ClearAll";
+            Btn_ClearAll.Size = new Size(94, 29);
+            Btn_ClearAll.TabIndex = 6;
+            Btn_ClearAll.Text = "초기화";
+            Btn_ClearAll.UseVisualStyleBackColor = true;
+            Btn_ClearAll.Click += Btn_ClearAll_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(591, 409);
+            Controls.Add(Btn_ClearAll);
+            Controls.Add(Btn_Delete);
             Controls.Add(lbl_Count);
             Controls.Add(Btn_Forwarding);
             Controls.Add(input_window);
@@ -105,5 +129,7 @@
         private TextBox input_window;
         private Button Btn_Forwarding;
         private Label lbl_Count;
+        private Button Btn_Delete;
+        private Button Btn_ClearAll;
     }
 }

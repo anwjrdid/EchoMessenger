@@ -9,6 +9,12 @@ namespace EchoMessenger
 
         private void Btn_Forwarding_Click(object sender, EventArgs e)
         {
+            if (input_window.Text.Length > 50) // 메시지 길이 제한 (50자)
+            {
+                MessageBox.Show("메시지는 50자 이내로 입력해주세요!", "경고");
+                return;
+            }
+
             // 앞뒤 공백 제거 (Trim)
             string raw_msg = input_window.Text.Trim();
 
@@ -43,6 +49,16 @@ namespace EchoMessenger
 
                 e.SuppressKeyPress = true; // 엔터 입력 시 '띵' 소리가 나는 걸 방지 (선택 사항)
             }
+        }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_ClearAll_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
