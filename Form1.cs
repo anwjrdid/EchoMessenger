@@ -53,11 +53,15 @@ namespace EchoMessenger
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-
+                output_window.Items.RemoveAt(output_window.SelectedIndex);
+                // 삭제 후 개수 레이블 업데이트 
+                lbl_Count.Text = $"현재 대화: {output_window.Items.Count}개";
         }
 
         private void Btn_ClearAll_Click(object sender, EventArgs e)
         {
+            output_window.Items.Clear();
+            lbl_Count.Text = "현재 대화: 0개";
 
         }
     }
